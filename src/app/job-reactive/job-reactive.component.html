@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class = "pt-3">
+
+    
+    <h1>JOB PROFILE</h1>
+    <form class="login-form data-form" [formGroup] = "form" (ngSubmit) = "onSubmit">
+
+        <mat-form-field>
+        <input matInput 
+        type="string" 
+        formControlName = "occupation"
+        name="occupation" placeholder="Occupation" />
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+        <input matInput 
+        type="string" 
+        formControlName = "location"
+        name="location" placeholder = "Location" />
+        </mat-form-field>
+        <br>
+        
+        <mat-form-field>
+        <input matInput 
+        type="email" 
+        formControlName = "address"
+        name="address" placeholder="Work Email Address" />
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+        <input matInput 
+        type="number" 
+        formControlName = "income"
+        name="income" placeholder="income" />
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+        <input matInput 
+        type="number" 
+        formControlName = "id"
+        name="id" placeholder="ID Number" />
+        </mat-form-field>
+        <br>
+    
+    </form>
+
+</body>
+</html>

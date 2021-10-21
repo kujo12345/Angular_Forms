@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <h1 class = pt-3>USER PROFILE</h1>
+    <form class="login-form data-form" (ngSubmit) = "onSubmit(loginForm)" #loginForm = "ngForm">
+
+        <mat-form-field>
+
+            <input matInput type = "string" 
+            name="fname"
+            fname
+            placeholder ="First Name" 
+            required
+            [(ngModel)] = "val.fname"
+            #fname = "ngModel"
+            (ngModelChange) = "onfnameChange($event)"
+            [ngModelOptions] = "{updateOn: 'blur'}">
+
+            <mat-error *ngIf = "fname.errors?.required">
+                First name is required 
+              </mat-error>
+
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+
+            <input matInput type = "string" 
+            name="lname"
+            lname
+            placeholder ="Last Name" 
+            required
+            [(ngModel)] = "val.lname"
+            #lname = "ngModel"
+            (ngModelChange) = "onlnameChange($event)"
+            [ngModelOptions] = "{updateOn: 'blur'}">
+
+            <mat-error *ngIf = "lname.errors?.required">
+                Last name is required 
+              </mat-error>
+
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+
+            <input matInput type = "date" 
+            name="birthdate"
+            birthdate
+            placeholder ="Birthdate" 
+            required
+            min="2000-01-01" 
+            max="2018-12-31"
+            [(ngModel)] = "val.birthdate"
+            #birthdate = "ngModel"
+            (ngModelChange) = "onbirthdateChange($event)"
+            [ngModelOptions] = "{updateOn: 'blur'}">
+
+            <mat-error *ngIf = "birthdate.errors?.required">
+                Birth Date is required 
+              </mat-error>
+
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+
+            <input matInput type = "number" 
+            name="age"
+            age
+            placeholder ="Age" 
+            required
+            [(ngModel)] = "val.age"
+            #age = "ngModel"
+            (ngModelChange) = "onageChange($event)"
+            [ngModelOptions] = "{updateOn: 'blur'}">
+
+            <mat-error *ngIf = "birthdate.errors?.required">
+                Age is required 
+              </mat-error>
+
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            
+            <input matInput type = "password" 
+            name = "password"
+            password
+            placeholder = "Password" 
+            required
+            [(ngModel)] = "val.password"
+            #password = "ngModel"
+            minlength = "6"
+            (ngModelChange) = "onpasswordChange($event)"
+            [ngModelOptions] = "{updateOn: 'blur'}" >
+
+            <mat-error *ngIf = "birthdate.errors?.required">
+                Password is required 
+              </mat-error>
+            <mat-error *ngIf = "password.errors?.minlength">
+                Password must be minimum of 6 characters.
+              </mat-error>
+
+        </mat-form-field>
+        <br>
+
+        <button mat-raised-button color="primary" [disabled] = "!loginForm.valid">Submit</button>
+    </form>
+
+    <div>
+        <br>
+        First Name - Errors
+        {{fname.errors | json }}
+        <br>
+        <br>
+        Last Name - Errors
+        {{lname.errors | json}}
+        <br>
+        <br>
+        Birth Date - Errors
+        {{birthdate.errors | json }}
+        <br>
+        <br>
+        Age - Errors
+        {{age.errors | json }}
+        <br>
+        <br>
+        Password - Errors
+        {{password.errors | json }}
+        <br>
+      </div>
+</body>
+</html>
